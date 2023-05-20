@@ -41,11 +41,10 @@
             while(convoOngoing){
                 // if mod 0, then it's a response, else it's a user prompt.
                 if(i % 2 == 0){
-                    let xpathExpression = "./div[1]/div[2]/div[2]/div/main/div[2]/div/div/div/div[" + i + "]/div/div[2]/div[1]/div/div";
+                    let xpathExpression = "./div[1]/div[2]/div[2]/div/main/div[2]/div/div/div/div[" + i + "]/div/div[2]/div[1]/div";
                     let thisLine = parseDiv(xpathExpression);
                     console.log(`Current line: ${thisLine}`);
                     if(thisLine != ""){
-                        // Should ChatGPT include the content policy message, we remove it here.
                         arr.push(thisLine.replace('This content may violate our content policy. If you believe this to be in error, please submit your feedback — your input will aid our research in this area.',''));
                     }
                     else{
@@ -57,7 +56,7 @@
                     let thisLine = parseDiv(xpathExpression);
                     console.log(`Current line: ${thisLine}`);
                     if(thisLine != ""){
-                        arr.push(thisLine);
+                        arr.push(thisLine.replace('This content may violate our content policy. If you believe this to be in error, please submit your feedback — your input will aid our research in this area.',''));
                     }
                     else{
                         convoOngoing = false;
