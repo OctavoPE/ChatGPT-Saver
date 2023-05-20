@@ -41,7 +41,7 @@ browser.tabs.executeScript({file: "/save.js"}).then(()=>{
      * Header button opens the github page.
      */
     document.getElementById("Header").addEventListener("click", (event) => {
-        const chosenPage = `https://github.com/OctavoPE`;
+        const chosenPage = `https://github.com/OctavoPE/ChatGPT-Saver`;
         browser.tabs.create({
             url: chosenPage,
         });
