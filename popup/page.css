@@ -1,0 +1,45 @@
+html,
+body {
+  width: 300px;
+  background-color: #202123;
+}
+
+.choices div{
+  width: 100%;
+  padding: 4px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  background-color: #353541;
+  color: #EFF0F5;
+  margin-bottom: 2px;
+}
+
+#html-choice:hover{
+  background-color: #3F414E;
+}
+#text-choice:hover{
+    background-color: #3F414E;
+}
+
+#Header{
+    padding: 2px;
+    text-align: center;
+    margin: 2px;
+    color: #EFF0F5;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#Header > *{
+    display: block;
+    margin: 2px;
+    text-align: center;
+}
+#h-title{
+    font-size: 2.0em;
+}
+#h-sub{
+    font-size: 1em;
+}
