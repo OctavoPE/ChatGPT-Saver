@@ -108,17 +108,19 @@
             else if(req == "text"){
                 browser.runtime.sendMessage({command: "download", type: "text", content: thisConvo});
             }
+            browser.runtime.sendMessage({command: "updatePopup", type: req, status: "success"});
         }
         else{
             console.log("Not a chat");
-        }
+            browser.runtime.sendMessage({command: "updatePopup", type: req, status: "failure"});
+        }        
     }
     /**
      * Receives message from popup\page.js and processes it.
      */
     browser.runtime.onMessage.addListener((message) => {
         if (message.command === "save") {
-          processRequest(message.type);
+            processRequest(message.type);
         }
     });
 })();

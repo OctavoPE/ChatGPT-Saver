@@ -21,6 +21,13 @@ function beginDownload(url,filename){
         conflictAction : 'uniquify'
     });
     downloading.then(onStartedDownload, onFailed);
+
+    browser.downloads.onChanged.addListener((d) => {
+        if(d.state && d.state.current == "complete"){
+            console.log("Download complete.");
+        }
+    });
+
 }
 
 /**
@@ -62,6 +69,7 @@ function downloadhtml(content){
     
     const blob = new Blob(arr, { type: "text/html" }); 
     beginDownload(URL.createObjectURL(blob),'conversation.html');
+    URL.revokeObjectURL(blob);
 }
 
 /**
