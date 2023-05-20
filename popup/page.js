@@ -1,5 +1,5 @@
 /**
- * Code written by Jeanmarco Allain
+ * Code written by Jeanmarco Allain (https://github.com/OctavoPE)
  */
 
 /**  
